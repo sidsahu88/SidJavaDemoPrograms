@@ -17,7 +17,7 @@ public class SynchronousQueueDemo {
 			}
 		}
 
-		if (queue.size() == 0) {
+		if (queue.isEmpty()) {
 			notifyAll();
 		}
 
@@ -26,7 +26,7 @@ public class SynchronousQueueDemo {
 	}
 
 	public synchronized int dequeue() {
-		while (queue.size() == 0) {
+		while (queue.isEmpty()) {
 			try {
 				System.out.println(Thread.currentThread().getName() + " waiting for enqueue as list is empty.");
 				wait();

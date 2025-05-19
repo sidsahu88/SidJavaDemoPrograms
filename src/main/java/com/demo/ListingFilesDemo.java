@@ -13,7 +13,7 @@ public class ListingFilesDemo {
 
 		try (Stream<Path> walk = Files.list(Paths.get(args[0]))) {
 
-			List<String> result = walk.map(x -> x.toString()).filter(f -> f.endsWith(args[1]))
+			List<String> result = walk.map(Path::toString).filter(f -> f.endsWith(args[1]))
 					.collect(Collectors.toList());
 
 			result.forEach(System.out::println);

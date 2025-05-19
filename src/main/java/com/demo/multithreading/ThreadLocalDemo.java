@@ -19,7 +19,7 @@ class LocalThread extends Thread {
 
 	LocalThread(String name, int noThreadLocal) {
 		super(name);
-		this.noThreadLocal = noThreadLocal;
+		LocalThread.noThreadLocal = noThreadLocal;
 	}
 
 	public void run() {

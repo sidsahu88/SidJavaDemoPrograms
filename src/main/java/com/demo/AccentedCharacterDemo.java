@@ -9,9 +9,9 @@ public class AccentedCharacterDemo {
 
 	public static void main(String[] args) throws IOException {
 
-		String str = "20 McAlister Placeâ, Ste 110";
+		String str = "20 McAlister Place, Ste 110";
 		String str2 = "25% OffÂ Select Items - ends 2/15/19-10590506";
-		String str3 = "25% Off Select Items - ends 2/15/19-10590506";
+		String str3 = "25% Off Select Items - ends 2/15/19-10590506";
 		String str4 = "25% Off\u00A0Select Items - ends 2/15/19-10590506";
 
 		System.out.println("String 1: " + str);
