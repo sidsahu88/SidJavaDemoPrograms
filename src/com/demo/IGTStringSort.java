@@ -12,13 +12,14 @@ public class IGTStringSort {
 			count[input.charAt(i) - 'a']++;
 		}
 
-		String output = "";
+		StringBuilder output = new StringBuilder();
 
 		for (int j = 0; j < count.length; j++) {
 			char ch = (char) (j + 'a');
+//			System.out.println(j + 'a');
 
 			while (count[j] > 0) {
-				output += ch;
+				output.append(ch);
 				count[j]--;
 			}
 		}

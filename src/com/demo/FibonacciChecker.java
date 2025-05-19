@@ -29,11 +29,8 @@ public class FibonacciChecker {
 			num1 = num2;
 			num2 = sum;
 		}
-		
-		if (num == sum)
-			return true;
-		else
-			return false;
+
+        return num == sum;
 	}
 
 }

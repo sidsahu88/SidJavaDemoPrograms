@@ -23,7 +23,7 @@ public class BlockingQueueDemo {
 			}
 		}
 
-		if (queue.size() == 0) {
+		if (queue.isEmpty()) {
 			notifyAll();
 		}
 
@@ -32,12 +32,11 @@ public class BlockingQueueDemo {
 	}
 
 	public synchronized int dequeue() {
-		while (queue.size() == 0) {
+		while (queue.isEmpty()) {
 			try {
 				System.out.println(Thread.currentThread().getName() + " waiting for enqueue as list is empty.");
 				wait();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -69,7 +68,6 @@ public class BlockingQueueDemo {
 				try {
 					sleep(5000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 

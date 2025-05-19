@@ -12,7 +12,7 @@ public class GoldmanSachLongestUniformString {
 		int longestStart = -1;
 		int longestLength = 0;
 		
-		if (input.length() > 0) {
+		if (!input.isEmpty()) {
 			int currStart = 0;
 			int currLen = 1;
 

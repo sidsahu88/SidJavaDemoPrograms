@@ -10,9 +10,9 @@ public class ArrayRotation {
 
 		leftRotate(arr, k);
 
-		for (int index = 0; index < arr.length; index++) {
-			System.out.print(arr[index] + " ");
-		}
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
 	}
 
 	private static void leftRotate(int[] arr, int k) {
