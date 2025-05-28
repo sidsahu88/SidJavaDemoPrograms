@@ -23,7 +23,7 @@ public class MaxOccurCharInString {
 			}
 		}
 
-		System.out.println("Maximum occuring character: " + result);
+		System.out.println("Maximum occurring character: " + result);
 	}
 
 }

@@ -1,29 +1,33 @@
 package com.demo;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class IGTStringSort {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		String input = "bbccdefbbaa";
+        String input = "bbccdefbbaa";
 
-		int[] count = new int[26];
+        log.info("Input String: {}", input);
 
-		for (int i = 0; i < input.length(); i++) {
-			count[input.charAt(i) - 'a']++;
-		}
+        int[] count = new int[26];
 
-		StringBuilder output = new StringBuilder();
+        for (char ch : input.toCharArray()) {
+            count[ch - 'a']++;
+        }
 
-		for (int j = 0; j < count.length; j++) {
-			char ch = (char) (j + 'a');
-//			System.out.println(j + 'a');
+        StringBuilder output = new StringBuilder();
 
-			while (count[j] > 0) {
-				output.append(ch);
-				count[j]--;
-			}
-		}
+        for (int j = 0; j < count.length; j++) {
+            char ch = (char) (j + 'a');
 
-		System.out.println(output);
-	}
+            while (count[j] > 0) {
+                output.append(ch);
+                count[j]--;
+            }
+        }
+
+        log.info("Sorted String: {}", output);
+    }
 }

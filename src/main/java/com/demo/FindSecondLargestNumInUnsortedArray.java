@@ -10,19 +10,19 @@ public class FindSecondLargestNumInUnsortedArray {
 		int firstSml = Integer.MAX_VALUE;
 		int secondSml = Integer.MAX_VALUE;
 
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] > firstLar) {
-				secondLar = firstLar;
-				firstLar = arr[i];
-			} else if (arr[i] > secondLar)
-				secondLar = arr[i];
-			
-			if (arr[i] < firstSml && arr[i] < secondSml) {
-				secondSml = firstSml;
-				firstSml = arr[i];
-			} else if (arr[i] > firstSml && arr[i] < secondSml)
-				secondSml = arr[i];
-		}
+        for (int j : arr) {
+            if (j > firstLar) {
+                secondLar = firstLar;
+                firstLar = j;
+            } else if (j > secondLar)
+                secondLar = j;
+
+            if (j < firstSml && j < secondSml) {
+                secondSml = firstSml;
+                firstSml = j;
+            } else if (j > firstSml && j < secondSml)
+                secondSml = j;
+        }
 
 		System.out.println("Second largest: " + secondLar);
 		System.out.println("Second smallest: " + secondSml);

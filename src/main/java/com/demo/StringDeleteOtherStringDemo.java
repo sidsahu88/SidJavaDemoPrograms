@@ -1,43 +1,36 @@
 package com.demo;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 public class StringDeleteOtherStringDemo {
 
-	private static int[] getCharCountArr(String str) {
+    public static void main(String[] args) {
 
-		int[] count = new int[128];
+        String str1 = "bangalore";
+        String str2 = "bc";
 
-		for (int i = 0; i < str.length(); i++) {
-			count[str.charAt(i)]++;
-		}
+        System.out.println("Op1: " + getTrimmedString(str1, str2) + "\nOp2: " + getTrimmedString(str2, str1));
 
-		return count;
+    }
 
-	}
+    public static String getTrimmedString(String str, String trimStr) {
+        Set<Character> trimStrSet = new HashSet<>();
 
-	public static String getTrimmedString(String str, String trimStr) {
+        for (char ch: trimStr.toCharArray())
+            trimStrSet.add(ch);
 
-		String trimmedStr = "";
+        StringBuilder trimmedStr = new StringBuilder();
 
-		int[] charCount = getCharCountArr(trimStr);
+        for (char ch: str.toCharArray()) {
+            if (trimStrSet.contains(ch))
+                continue;
 
-		for (int i = 0; i < str.length(); i++) {
+            trimmedStr.append(ch);
+        }
 
-			if (charCount[str.charAt(i)] <= 0)
-				trimmedStr = trimmedStr + str.charAt(i);
-
-		}
-
-		return trimmedStr;
-
-	}
-
-	public static void main(String[] args) {
-
-		String str1 = "bangalore";
-		String str2 = "bc";
-
-		System.out.println("Op1: " + getTrimmedString(str1, str2) + "\nOp2: " + getTrimmedString(str2, str1));
-
-	}
-
+        return trimmedStr.toString();
+    }
 }

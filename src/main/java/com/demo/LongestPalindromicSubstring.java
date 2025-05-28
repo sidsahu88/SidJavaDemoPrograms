@@ -2,53 +2,48 @@ package com.demo;
 
 public class LongestPalindromicSubstring {
 
-	public void findLongPalindromicSubstring(String str) {
-		int n = str.length();
+    public static void main(String[] args) {
+        System.out.println("adbscerkrecljdsaasdj : " + findLongPalindromicSubstring("adbscerkrecljdsaasdj"));
+        System.out.println("cljdsdjcl : " + findLongPalindromicSubstring("cljdsdjcl"));
+        System.out.println(":" + findLongPalindromicSubstring(" "));
+        System.out.println(null + ":" + findLongPalindromicSubstring(null));
+        System.out.println("a:" + findLongPalindromicSubstring("a"));
+        System.out.println("ab:" + findLongPalindromicSubstring("a"));
+        System.out.println("abcc:" + findLongPalindromicSubstring("cc"));
+    }
 
-		Integer palTab[][] = new Integer[n][n]; // Create a 2-d array to store the values
+    private static String findLongPalindromicSubstring(String str) {
+        if (str == null || str.isBlank())
+            return "";
 
-		int max = 0;
-		int strtIndx = 0, lastIndx = 0;
+        int n = str.length();
 
-		for (int i = 0; i < n; i++) { // Loop through string
-			for (int j = n - 1; j >= 0; j--) { // Loop backward through string
-				int k = n - j - 1;
+        if (n == 1)
+            return str;
 
-				if (str.charAt(i) != str.charAt(j))
-					palTab[i][k] = 0;
-				else {
-					if ((i == 0) || (k == 0))
-						palTab[i][k] = 1;
-					else
-						palTab[i][k] = palTab[i - 1][k - 1] + 1;
-				}
+        int[][] palTab = new int[n][n]; // Create a 2-d array to store the values
+        int max = 0;
+        int strtIndx = 0, lastIndx = 1;
 
-				if (palTab[i][k] > max) {
-					max = palTab[i][k];
+        for (int i = 0; i < n; i++) { // Loop through string
+            for (int j = n - 1; j >= 0; j--) { // Loop backward through string
+                int k = n - 1 - j;
 
-					strtIndx = i + 1 - max;
-					lastIndx = i;
-				}
-			}
-		}
+                if (str.charAt(i) == str.charAt(j)) {
+                    if ((i == 0) || (k == 0))
+                        palTab[i][k] = 1;
+                    else
+                        palTab[i][k] = palTab[i - 1][k - 1] + 1;
+                }
 
-		while (strtIndx <= lastIndx) {
-			System.out.print(str.charAt(strtIndx));
-			strtIndx++;
-		}
+                if (max < palTab[i][k]) {
+                    max = palTab[i][k];
+                    lastIndx = i + 1;
+                    strtIndx = lastIndx - max;
+                }
+            }
+        }
 
-		System.out.println("\nLength: " + max);
-	}
-
-	public static void main(String[] args) {
-		LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-
-		String str = "adbscerkrecljdsaasdj";
-		// String str = "cljdsdjcl";
-
-		System.out.println("String: " + str);
-
-		System.out.println("Palindromic Substring: ");
-		lps.findLongPalindromicSubstring(str);
-	}
+        return str.substring(strtIndx, lastIndx);
+    }
 }

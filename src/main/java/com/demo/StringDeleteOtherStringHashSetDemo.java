@@ -13,11 +13,11 @@ public class StringDeleteOtherStringHashSetDemo {
 		HashSet<Character> hs1 = new LinkedHashSet<>();
 		HashSet<Character> hs2 = new LinkedHashSet<>();
 
-		for (int i = 0; i < str1.length(); i++)
-			hs1.add(str1.charAt(i));
+		for (char ch: str1.toCharArray())
+			hs1.add(ch);
 
-		for (int i = 0; i < str2.length(); i++)
-			hs2.add(str2.charAt(i));
+		for (char ch: str2.toCharArray())
+			hs2.add(ch);
 
 		System.out.println("Op1: ");
 		hs1.forEach(s -> {

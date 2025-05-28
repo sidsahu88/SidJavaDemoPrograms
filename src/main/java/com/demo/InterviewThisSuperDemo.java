@@ -1,7 +1,8 @@
 package com.demo;
 
 class Alpha {
-	public String type = "a ";
+	public String type1 = "a ";
+	public String type2 = "b ";
 
 	public Alpha() {
 		System.out.print("alpha ");
@@ -14,9 +15,9 @@ class Beta extends Alpha {
 	}
 
 	public void print() {
-		type = "b ";
+		type1 = "c ";
 
-		System.out.print(this.type + super.type);
+		System.out.print(this.type1 + super.type1 + super.type2);
 	}
 }
 

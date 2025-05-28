@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class AnagramsGroup {
+public class StringFindAnagramsGroupUsingCharSort {
 
 	public static void main(String[] args) {
 
@@ -15,8 +15,7 @@ public class AnagramsGroup {
 
 		for (String word : words) {
 			String sorted_word = getSortedWord(word);
-			List<String> l = map.computeIfAbsent(sorted_word, value -> new ArrayList<String>());
-			l.add(word);
+			map.computeIfAbsent(sorted_word, value -> new ArrayList<>()).add(word);
 			//map.putIfAbsent(sorted_word, l);
 		}
 

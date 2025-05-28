@@ -20,14 +20,13 @@ public class StringReverseUsingRecursion {
 	}
 	
 	private static String reverseString(String str) {
-		String reverseStr = "";
-		
-		if (str.length() > 1)				
-			reverseStr = reverseString(str.substring(1)) + str.charAt(0);
-		else if(str.length() == 1)
-			reverseStr = str;
-				
-		return reverseStr;
+		if (str == null || str.isEmpty())
+			return "";
+
+		if(str.length() == 1)
+			return str;
+
+        return reverseString(str.substring(1)) + str.charAt(0);
 	}
 
 }

@@ -41,7 +41,7 @@ public class JumpSearchDemo {
 	}
 
 	public static void main(String[] args) {
-		int arr[] = { 2, 8, 13, 21, 24, 29, 38, 44, 50, 57, 61, 65, 70, 79, 82, 85, 89, 94, 98, 100 };
+		int[] arr = { 2, 8, 13, 21, 24, 29, 38, 44, 50, 57, 61, 65, 70, 79, 82, 85, 89, 94, 98, 100 };
 
 		int srh_no_1 = 57;
 		int srh_no_2 = 94;

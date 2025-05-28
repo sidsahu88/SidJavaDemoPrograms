@@ -18,9 +18,7 @@ public class SwapTwoNumbersDemo {
 	}
 
 	static void swap(AtomicInteger a, AtomicInteger b) {
-
 		a.set(b.getAndSet(a.get()));
-
 	}
 
 }

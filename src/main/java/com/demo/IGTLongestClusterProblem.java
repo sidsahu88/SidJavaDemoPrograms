@@ -26,7 +26,7 @@ Output: 3
 
 public class IGTLongestClusterProblem {
 
-	static <T> void print(T t) {
+	private static <T> void print(T t) {
 		System.out.println(t);
 	}
 

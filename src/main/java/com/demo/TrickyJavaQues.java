@@ -1,7 +1,7 @@
 package com.demo;
 
 interface iFruit {
-	public String TYPE = "Apple";
+	String TYPE = "Apple";
 }
 
 class Fruit implements iFruit {
@@ -9,6 +9,17 @@ class Fruit implements iFruit {
 }
 
 public class TrickyJavaQues {
+
+	// Question 9
+	static int a = 1111;
+
+	static {
+		a = a-- - --a; //1111 - 1109 = 2
+	}
+
+	{
+		a = a++ + ++a;
+	}
 
 	public static void main(String[] args) {
 
@@ -34,11 +45,13 @@ public class TrickyJavaQues {
 		
 		// Question 4
 		String one = "Random";
-		String two = "RAndom";
+		String two = new String("Random");
 
 		System.out.println("\nAnswer 4:");
 		if (one == two)
 			System.out.println("one==two");
+		else if (one.equals(two))
+			System.out.println("one.equals(two)");
 		else
 			System.out.println("one!=two");
 
@@ -97,19 +110,9 @@ public class TrickyJavaQues {
 		int[] arr = new int[5];
 		
 		System.out.println("\nAnswer 11:");
-		System.out.println(arr);
+		for(int n : arr)
+			System.out.println(n);
 		
-	}
-	
-	// Question 9
-	static int a = 1111;
-	
-	static {
-		a = a-- - --a; //1111 - 1109 = 2
-	}
-	
-	{
-		a = a++ + ++a;
 	}
 
 }

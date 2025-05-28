@@ -10,23 +10,20 @@ public class IndexOfCorruptNoInSequence {
 			return;
 		}
 
-		if (arr.length > 2) {
-			int i = 1;
+        int i = 1;
 
-			while (i < arr.length) {
-				if (arr[i - 1] + 1 != arr[i])
-					break;
+        while (i < arr.length) {
+            if (arr[i - 1] + 1 != arr[i])
+                break;
 
-				i++;
-			}
+            i++;
+        }
 
-			if (i == 1 && arr[i] + 1 == arr[i + 1])
-					i--;
+        if (i == 1 && arr[i] + 1 == arr[i + 1])
+                i--;
 
-			System.out.println(
-					"Array length: " + arr.length + "\nCorrupt no.: " + arr[i] + "\nIndex of the corrupt no.: " + i);
-		} else
-			System.out.println("Not enough element in the array. Total elements : " + arr.length);
-	}
+        System.out.println(
+                "Array length: " + arr.length + "\nCorrupt no.: " + arr[i] + "\nIndex of the corrupt no.: " + i);
+    }
 
 }

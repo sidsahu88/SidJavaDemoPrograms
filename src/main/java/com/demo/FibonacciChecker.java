@@ -2,7 +2,7 @@ package com.demo;
 
 public class FibonacciChecker {
 
-	static <T> void print(T t) {
+	private static <T> void print(T t) {
 		System.out.println(t);
 	}
 
@@ -15,7 +15,7 @@ public class FibonacciChecker {
 		print("Testcase 6: " + fibonacciNumCheck(Integer.MAX_VALUE));
 	}
 
-	static boolean fibonacciNumCheck(int num) {
+	private static boolean fibonacciNumCheck(int num) {
 		if (num == 0)
 			return true;
 

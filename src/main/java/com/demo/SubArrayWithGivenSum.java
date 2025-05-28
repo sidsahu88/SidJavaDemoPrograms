@@ -2,44 +2,46 @@ package com.demo;
 
 public class SubArrayWithGivenSum {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		int[] arr = { 20, 3, 5, 12, 8, 21, 4, 18, 6, 11, 2 };
+        int[] arr = {20, 3, 5, 12, 8, 21, 4, 18, 6, 11, 2};
 
-		int sum = 8;
+        int sum1 = 8;
+        int sum2 = 39;
 
-		findSubArrayWithGivenSum(arr, sum);
+        findSubArrayWithGivenSum(arr, sum1);
+        findSubArrayWithGivenSum(arr, sum2);
 
-	}
+    }
 
-	private static boolean findSubArrayWithGivenSum(int[] arr, int sum) {
+    private static boolean findSubArrayWithGivenSum(int[] arr, int sum) {
 
-		int start = 0, end = 1;
-		int curr_sum = arr[start];
-		boolean found = false;
+        int start = 0, end = 1;
+        int curr_sum = arr[start];
+        boolean found = false;
 
-		while (end <= arr.length - 1) {
+        while (end <= arr.length - 1) {
 
-			curr_sum += arr[end];
-			
-			if (curr_sum == sum) {
-				found = true;
-				break;
-			}
+            curr_sum += arr[end];
 
-			while (curr_sum > sum && start < end)
-				curr_sum -= arr[start++];
-			
-			end++;
+            if (curr_sum == sum) {
+                found = true;
+                break;
+            }
 
-		}
+            while (curr_sum > sum && start < end)
+                curr_sum -= arr[start++];
 
-		if (found)
-			System.out.println(String.format("Subarray is within index %d and %d", start, end));
-		else
-			System.out.println("No Subarray found.");
+            end++;
 
-		return found;
-	}
+        }
+
+        if (found)
+            System.out.printf("Subarray is within index %d and %d%n", start, end);
+        else
+            System.out.println("No Subarray found.");
+
+        return found;
+    }
 
 }

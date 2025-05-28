@@ -8,9 +8,9 @@ public class InterviewGCFinalizeDemo {
 
 		str = null;
 
-//		InterviewGCFinalizeDemo igf = new InterviewGCFinalizeDemo();
+		InterviewGCFinalizeDemo igf = new InterviewGCFinalizeDemo();
 		
-//		igf = null;
+		igf = null;
 
 		System.gc();
 
@@ -27,7 +27,7 @@ public class InterviewGCFinalizeDemo {
 
 	@Override
 	protected void finalize() throws Throwable {
-		System.out.println("Finalize method called");
+		System.out.println("Finalize method called for InterviewGCFinalizeDemo object");
 	}
 
 }
