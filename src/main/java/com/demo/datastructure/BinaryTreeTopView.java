@@ -24,7 +24,7 @@ final class BTNode {
 
 public class BinaryTreeTopView {
 
-	private static TreeMap<Integer, BTNode> map = new TreeMap<>();
+	private static final TreeMap<Integer, BTNode> map = new TreeMap<>();
 
 	public static void main(String[] args) {
 
@@ -76,7 +76,7 @@ public class BinaryTreeTopView {
 
 			if (currNP.node.left != null)
 				q.add(new NodePos(currNP.node.left, currNP.pos - 1));
-	
+
 			if (currNP.node.right != null)
 				q.add(new NodePos(currNP.node.right, currNP.pos + 1));
 

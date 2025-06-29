@@ -9,20 +9,20 @@ public class ReverseStringStackImpl {
 
 	public static void main(String[] args) throws IOException {
 
-		Stack<Character> st = new Stack<Character>();
+		Stack<Character> st = new Stack<>();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.println("Enter a String: ");
 		String input = reader.readLine();
 		reader.close();
 
-		for (int i = 0; i < input.length(); i++)
-			st.push(input.charAt(i));
+		for (char ch:input.toCharArray())
+			st.push(ch);
 
-		String output = "";
+		StringBuilder output = new StringBuilder();
 
 		while (!st.isEmpty())
-			output = output + st.pop();
+			output.append(st.pop());
 
 		System.out.println("Reversed String: \n" + output);
 

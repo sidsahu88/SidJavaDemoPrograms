@@ -2,37 +2,29 @@ package com.demo.datastructure;
 
 final class MyLinkedList {
 
-	private class Node {
+	private static class Node {
 
-		public String name;
-		public Node next;
+		private String name;
+		private Node next;
 
 		public Node(String name) {
-
 			this.name = name;
-
 		}
 
 		public Node(String name, Node next) {
-
 			this(name);
 			this.next = next;
-
 		}
 	}
 
 	public Node head;
 
 	public MyLinkedList() {
-
 		head = null;
-
 	}
 
 	public MyLinkedList(String name) {
-
 		head = new Node(name, null);
-
 	}
 
 	public void addLLNodeLast(String name) {

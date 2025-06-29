@@ -24,15 +24,10 @@ public class HashMapSortingByValue {
 
 		List<Map.Entry<String, Integer>> hashList = new ArrayList<>(hm.entrySet());
 
-		Collections.sort(hashList, new Comparator<Map.Entry<String, Integer>>() {
-
-			@Override
-			public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-				return (o1.getValue()).compareTo(o2.getValue());
-				//return (o1.getValue() - o2.getValue());
-			}
-
-		});
+		hashList.sort((o1, o2) -> {
+            return (o1.getValue()).compareTo(o2.getValue());
+            //return (o1.getValue() - o2.getValue());
+        });
 
 		HashMap<String, Integer> newhm = new LinkedHashMap<>();
 

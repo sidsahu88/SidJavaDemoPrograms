@@ -63,14 +63,13 @@ public class HeapSortDemo {
 
 	void printArray(int[] arr) {
 
-		for (int i = 0; i < arr.length; i++)
-			System.out.print(arr[i] + " ");
+        for (int j : arr) System.out.print(j + " ");
 
 	}
 
 	public static void main(String[] args) {
 
-		int arr[] = { 7, 4, 1, 6, 9, 10, 2, 5, 3, 8 };
+		int[] arr = { 7, 4, 1, 6, 9, 10, 2, 5, 3, 8 };
 
 		HeapSortDemo heap = new HeapSortDemo();
 

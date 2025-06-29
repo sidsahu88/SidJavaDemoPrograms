@@ -36,7 +36,7 @@ class B {
 	}
 }
 
-public class CheckNullObjectinListUsingStream {
+public class CheckNullObjectInListUsingStream {
 
 	public static void main(String[] args) {
 
@@ -49,7 +49,7 @@ public class CheckNullObjectinListUsingStream {
 		B b2 = new B();
 		// b2.setVarB(a1);
 
-		List<B> bList1 = new ArrayList<B>();
+		List<B> bList1 = new ArrayList<>();
 
 		bList1.add(b1);
 		bList1.add(b2);
