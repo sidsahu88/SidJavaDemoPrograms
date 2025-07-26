@@ -1,8 +1,11 @@
 package com.demo.multithreading;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.LinkedList;
 import java.util.List;
 
+@Slf4j
 public class BlockingQueueDemo {
 
 	private final List<Integer> queue = new LinkedList<Integer>();
@@ -16,7 +19,7 @@ public class BlockingQueueDemo {
 	public synchronized void enqueue(int i) {
 		while (queue.size() == limit) {
 			try {
-				System.out.println(Thread.currentThread().getName() + " waiting for dequeue as list is full.");
+                log.info("{} waiting for dequeue as list is full.", Thread.currentThread().getName());
 				wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -27,14 +30,14 @@ public class BlockingQueueDemo {
 			notifyAll();
 		}
 
-		System.out.println(Thread.currentThread().getName() + " adding no.: " + i);
+        log.info("{} adding no.: {}", Thread.currentThread().getName(), i);
 		queue.add(i);
 	}
 
 	public synchronized int dequeue() {
 		while (queue.isEmpty()) {
 			try {
-				System.out.println(Thread.currentThread().getName() + " waiting for enqueue as list is empty.");
+                log.info("{} waiting for enqueue as list is empty.", Thread.currentThread().getName());
 				wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -55,7 +58,7 @@ public class BlockingQueueDemo {
 		Thread producer = new Thread("Producer") {
 			@Override
 			public void run() {
-				System.out.println(Thread.currentThread().getName() + " started.");
+				log.info(Thread.currentThread().getName() + " started.");
 
 				bq.enqueue(10);
 				bq.enqueue(12);
@@ -75,19 +78,19 @@ public class BlockingQueueDemo {
 				bq.enqueue(23);
 				bq.enqueue(19);
 
-				System.out.println(Thread.currentThread().getName() + " exited.");
+				log.info(Thread.currentThread().getName() + " exited.");
 			}
 		};
 
 		Thread consumer = new Thread("Consumer") {
 			@Override
 			public void run() {
-				System.out.println(Thread.currentThread().getName() + " started.");
+				log.info(Thread.currentThread().getName() + " started.");
 
 				for (int i = 1; i <= 10; i++)
-					System.out.println(Thread.currentThread().getName() + " removed no.: " + bq.dequeue());
+                    log.info("{} removed no.: {}", Thread.currentThread().getName(), bq.dequeue());
 
-				System.out.println(Thread.currentThread().getName() + " exited.");
+				log.info(Thread.currentThread().getName() + " exited.");
 			}
 		};
 

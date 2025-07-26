@@ -5,7 +5,6 @@ class GenericsClass<T> {
 	T obj;
 
 	public GenericsClass(T obj) {
-		super();
 		this.obj = obj;
 	}
 

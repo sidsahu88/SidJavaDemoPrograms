@@ -20,6 +20,9 @@ public class IGTStringSort {
         StringBuilder output = new StringBuilder();
 
         for (int j = 0; j < count.length; j++) {
+            if (count[j] == 0)
+                continue;
+
             char ch = (char) (j + 'a');
 
             while (count[j] > 0) {

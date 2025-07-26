@@ -175,8 +175,7 @@ final class MyLinkedList {
 
 		if (currNode.next == null) {
 			head = currNode;
-			return;
-		} else {
+        } else {
 			reverseLLRecurse(currNode.next);
 			Node prevNode = currNode.next;
 			prevNode.next = currNode;
@@ -191,8 +190,7 @@ final class MyLinkedList {
 		if (head != null) {
 			printLLReverseRecursion(head.next);
 			System.out.println(head.name);
-		} else
-			return;
+		}
 	}
 
 	public void displayLL() {

@@ -17,7 +17,7 @@ class Beta extends Alpha {
 	public void print() {
 		type1 = "c ";
 
-		System.out.print(this.type1 + super.type1 + super.type2);
+		System.out.print(this.type1 + this.type2 + super.type1 + super.type2);
 	}
 }
 

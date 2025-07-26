@@ -4,11 +4,11 @@ public class PhoneShop {
 
 	public static void main(String[] args) {
 
-		Phone samsung = new PhoneBuilder().setBrand("Samsung").setOs("Android").setRam(4).setBattery(5000).buildPhone();
+		Phone samsung = new PhoneBuilder().setBrand("Samsung").setOs("Android").setRam(4).setBattery(5000).build();
 		
 		System.out.println(samsung);
 		
-		Phone iphone = new PhoneBuilder().setBrand("IPhone").setOs("iOS").setBattery(6000).setScreenSize(6).buildPhone();
+		Phone iphone = new PhoneBuilder().setBrand("IPhone").setOs("iOS").setBattery(6000).setScreenSize(6).build();
 		
 		System.out.println(iphone);
 

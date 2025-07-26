@@ -10,7 +10,6 @@ class SingleValueClass<T> {
 	T obj;
 
 	public SingleValueClass(T obj) {
-		super();
 		this.obj = obj;
 	}
 

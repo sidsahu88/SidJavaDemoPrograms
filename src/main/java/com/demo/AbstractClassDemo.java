@@ -3,15 +3,13 @@ package com.demo;
 public class AbstractClassDemo extends AbstractClass {
 
 	AbstractClassDemo() {
-		// super("Siddharth"); //Uncomment it to call parameterized abstract class
-		// constructor.
+		//super("Siddharth"); //Uncomment it to call parameterized abstract class constructor.
 		System.out.println("This is a child class constructor.");
 	}
 
 	public static void main(String[] args) {
 
 		AbstractClassDemo ac = new AbstractClassDemo(); // Calling abstract class constructor
-
 		ac.printMsg("Siddharth"); // Calling overridden method
 		ac.printStr();
 

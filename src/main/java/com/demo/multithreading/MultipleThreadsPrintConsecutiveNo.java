@@ -1,5 +1,8 @@
 package com.demo.multithreading;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 class PrintConsecNo implements Runnable {
 
 	int i = 1;
@@ -10,12 +13,10 @@ class PrintConsecNo implements Runnable {
 	}
 
 	private synchronized void printNo() {
-
 		while (i <= 100) {
-
 			if ((i % numThreads == Integer.parseInt(Thread.currentThread().getName()))
 					|| (i % numThreads + numThreads == Integer.parseInt(Thread.currentThread().getName()))) {
-				System.out.println("Thread " + Thread.currentThread().getName() + " printed: " + i++);
+                log.info("Thread {} printed: {}", Thread.currentThread().getName(), i++);
 
 				notifyAll();
 			} else {
@@ -25,7 +26,7 @@ class PrintConsecNo implements Runnable {
 					else
 						break;
 				} catch (Exception e) {
-					e.printStackTrace();
+					log.error(e.getLocalizedMessage());
 				}
 			}
 
@@ -38,6 +39,7 @@ class PrintConsecNo implements Runnable {
 	}
 }
 
+@Slf4j
 public class MultipleThreadsPrintConsecutiveNo {
 
 	public static void main(String[] args) {
@@ -55,7 +57,7 @@ public class MultipleThreadsPrintConsecutiveNo {
 		t4.start();
 		t5.start();
 
-		System.out.println("Main thread");
+		log.info("Main thread");
 	}
 
 }

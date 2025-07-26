@@ -12,13 +12,7 @@ public class MeetingRoomSchedulingProblem {
         if (schedule.length == 0)
             return 0;
 
-        Arrays.sort(schedule, new Comparator<int[]>() {
-
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return Integer.compare(o1[1], o2[1]);
-            }
-        });
+        Arrays.sort(schedule, (o1, o2) -> Integer.compare(o1[1], o2[1]));
 
         LinkedHashMap<Integer, Integer> meetingSch = new LinkedHashMap<>();
 

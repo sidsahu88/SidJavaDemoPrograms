@@ -1,5 +1,8 @@
 package com.demo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -32,19 +35,13 @@ final class ImmutableKlass2 {
 
 }
 
+@Setter
+@Getter
 class MutableKlass2 {
 
 	int data;
 
-	public int getData() {
-		return data;
-	}
-
-	public void setData(int data) {
-		this.data = data;
-	}
-
-	@Override
+    @Override
 	public String toString() {
 		return "MutableKlass2 [data=" + data + "]";
 	}

@@ -8,8 +8,8 @@ public class LongestPalindromicSubstring {
         System.out.println(":" + findLongPalindromicSubstring(" "));
         System.out.println(null + ":" + findLongPalindromicSubstring(null));
         System.out.println("a:" + findLongPalindromicSubstring("a"));
-        System.out.println("ab:" + findLongPalindromicSubstring("a"));
-        System.out.println("abcc:" + findLongPalindromicSubstring("cc"));
+        System.out.println("ab:" + findLongPalindromicSubstring("ab"));
+        System.out.println("abcc:" + findLongPalindromicSubstring("abcc"));
     }
 
     private static String findLongPalindromicSubstring(String str) {
